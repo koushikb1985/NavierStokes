@@ -1,8 +1,10 @@
-#navierStokes.py
+# NavierStokes.py
 #
-#Solves 2D force-free Navier-Stokes equation assuming perriodic boundary conditions.
-#We use the streamfunction-vorticity formalism and the equations are solved using spectral 
-#methods. In this method, the equations in Fouruer domain is solved:
+# Author: Koushik Balasubramanian, YITP, Stony Brook University
+#
+# Solves 2D force-free Navier-Stokes equation assuming perriodic boundary conditions.
+# We use the streamfunction-vorticity formalism and the equations are solved using spectral
+# methods. In this method, the equations in Fouruer domain is solved:
 #
 # \del/\del_t \omegahat_p  = -FFT(u . \nabla \omega)_p - \nu p^2 \omegahat_p
 # -p^2 \psihat_p = \omegahat_p
@@ -12,7 +14,8 @@
 #
 # Inverse Fourier Transform is used to obtain u, \omega and \psi in real space
 #
-#This code will display a "movie" at the end of the computation
+# This code will write to a file called KBTurbulence.txt
+#
 #
 import os
 from numpy import *
