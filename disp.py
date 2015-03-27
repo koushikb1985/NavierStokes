@@ -1,3 +1,6 @@
+# A script for making a movie that shows the evolution of vorticity field
+# Data is taken from KBTurbulence.txt
+
 import os,sys
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,parentdir)
@@ -24,6 +27,6 @@ for steps in xrange(Nframes-1):
     im=mlab.surf(omega/abs(omega.max()),colormap = 'jet', opacity =.80, transparent = True,warp_scale='auto',figure=s)
     fname = 'KB_fig%03d.png'%steps
     mlab.savefig(fname)
-os.system("convert -quality 100 *.png Relturb1.gif")
+os.system("convert -quality 100 *.png KBturbMovie.gif")
 os.system("rm KB_fig*.png")
     
